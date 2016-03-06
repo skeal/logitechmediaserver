@@ -16,7 +16,7 @@ CMD ["/sbin/my_init"]
 #########################################
 RUN apt-get update
 
-RUN apt-get install perlbrew git libssl-dev
+RUN apt-get install --yes perlbrew git libssl-dev
 RUN perlbrew init
 RUN perlbrew install stable
 RUN perlbrew use perl-5.20.2
