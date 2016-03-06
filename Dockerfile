@@ -17,9 +17,9 @@ CMD ["/sbin/my_init"]
 RUN apt-get update
 RUN apt-get -y install git
 RUN mkdir /tmp/lms
-RUN  git clone https://github.com/Logitech/slimserver-vendor.git /tmp/lms
+RUN  git clone https://github.com/Logitech/slimserver-vendor/tree/public/7.9/CPAN /tmp/lms
 RUN chmod +x /tmp/lms/CPAN/buildme.sh
-RUN /tmp/lms/CAPN/buildme.sh
+RUN /tmp/lms/CPAN/buildme.sh
 COPY install.sh /tmp/
 RUN chmod +x /tmp/install.sh; sync; /tmp/install.sh; sync; rm /tmp/install.sh
 
