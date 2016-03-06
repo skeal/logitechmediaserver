@@ -17,6 +17,7 @@ CMD ["/sbin/my_init"]
 RUN apt-get update
 RUN apt-get -y install git gcc make zlib1g-dev libmp3lame-dev libmad0-dev libpng12-dev libjpeg8-dev
 RUN mkdir /tmp/lms
+RUN  perl -v
 RUN apt-get -f -y install perl=5.18.2-2ubuntu1
 
 #RUN git clone https://github.com/Logitech/slimserver-vendor.git  /tmp/lms
