@@ -14,7 +14,11 @@ CMD ["/sbin/my_init"]
 #########################################
 ##         RUN INSTALL SCRIPT          ##
 #########################################
-
+RUN apt-get -f install git
+RUN mkdir /tmp/lms
+RUN git archive --remote=https://github.com/Logitech/slimserver-vendor.git CPAN /tmp/lms | tar xvf -
+RUN chmod +x /tmp/lms/buildme.sh
+RUN /tmp/lms/buildme.sh
 COPY install.sh /tmp/
 RUN chmod +x /tmp/install.sh; sync; /tmp/install.sh; sync; rm /tmp/install.sh
 
