@@ -15,14 +15,19 @@ CMD ["/sbin/my_init"]
 ##         RUN INSTALL SCRIPT          ##
 #########################################
 RUN apt-get update
-RUN apt-get -y install git gcc make zlib1g-dev libmp3lame-dev libmad0-dev libpng12-dev libjpeg8-dev
-RUN mkdir /tmp/lms
-RUN  perl -v
-RUN apt-get -f -y install perl=5.18.2-2ubuntu1
 
-#RUN git clone https://github.com/Logitech/slimserver-vendor.git  /tmp/lms
-#RUN chmod +x /tmp/lms/CPAN/buildme.sh
-#RUN /tmp/lms/CPAN/buildme.sh
+# Install perl modules 
+RUN apt-get install -y cpanminus
+
+RUN cpanm Sub::Name \
+ DBI \ 
+ EV \
+ XML::Parser::Expat \
+ HTML::Parser \
+ JSON::XS \
+ Digest::SHA1 \
+ YAML::XS
+
 COPY install.sh /tmp/
 RUN chmod +x /tmp/install.sh; sync; /tmp/install.sh; sync; rm /tmp/install.sh
 
