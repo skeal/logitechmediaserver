@@ -16,39 +16,7 @@ CMD ["/sbin/my_init"]
 #########################################
 RUN apt-get update
 
-RUN apt-get install --yes perlbrew git libssl-dev
-
-# Install perl to perlbrew
-RUN perlbrew init && \
-    perlbrew install perl-5.20.0 && \
-    perlbrew switch perl-5.20.0 && \
-    perlbrew install-cpanm
-
-
-# Install perl modules
-RUN perlbrew exec cpanm \
-        Module::Install && \
-    perlbrew exec cpanm \
-        DBI \
-        EV \
-		XML::Parser::Expat \
-		HTML::Parser \
-		JSON::XS \
-		Digest::SHA1 \
-		YAML::XS
-		
-
-# Install perl modules 
-#RUN apt-get install -y cpanminus
-
-#RUN cpanm Sub::Name \
- #DBI \ 
- #EV \
- #XML::Parser::Expat \
- #HTML::Parser \
- #JSON::XS \
- #Digest::SHA1 \
- #YAML::XS
+RUN perl -v
 
 COPY install.sh /tmp/
 RUN chmod +x /tmp/install.sh; sync; /tmp/install.sh; sync; rm /tmp/install.sh
