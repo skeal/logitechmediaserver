@@ -47,9 +47,9 @@ chmod -R +x /etc/service/ /etc/my_init.d/
 # Install LMS
 OUT=$(curl -skL "http://downloads.slimdevices.com/nightly/index.php?ver=7.9")
 # Try to catch the link or die
-REGEX=".*href=\".(.*)amd64.deb\""
+REGEX=".*href=\".(.*).deb\""
 if [[ ${OUT} =~ ${REGEX} ]]; then
-  URL="http://downloads.slimdevices.com/nightly${BASH_REMATCH[1]}.deb"
+  URL="http://downloads.slimdevices.com/nightly${BASH_REMATCH[1]}amd64.deb"
 else
   exit 1
 fi
