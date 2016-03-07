@@ -14,9 +14,6 @@ CMD ["/sbin/my_init"]
 #########################################
 ##         RUN INSTALL SCRIPT          ##
 #########################################
-RUN apt-get update
-
-RUN perl -v
 
 COPY install.sh /tmp/
 RUN chmod +x /tmp/install.sh; sync; /tmp/install.sh; sync; rm /tmp/install.sh
