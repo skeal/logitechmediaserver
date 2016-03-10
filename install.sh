@@ -27,6 +27,7 @@ add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty-updates univ
 apt-get update -qq
 apt-get install -qy lame faad flac sox
 
+
 #########################################
 ##  FILES, SERVICES AND CONFIGURATION  ##
 #########################################
@@ -58,6 +59,14 @@ curl -skL -o /tmp/lms.deb $URL
 dpkg -i /tmp/lms.deb
 rm /tmp/lms.deb
 
+# Install airplay
+
+apt-get update
+apt-get install -y wget libcrypt-openssl-rsa-perl libio-socket-inet6-perl libwww-perl avahi-utils libio-socket-ssl-perl
+wget http://www.inf.udec.cl/~diegocaro/rpi/libnet-sdp-perl_0.07-1_all.deb
+dpkg -i libnet-sdp-perl_0.07-1_all.deb
+
+/etc/init.d/avahi-daemon restart
 #########################################
 ##                 CLEANUP             ##
 #########################################
