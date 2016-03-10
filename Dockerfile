@@ -29,7 +29,7 @@ RUN chmod +x /tmp/install.sh; sync; /tmp/install.sh; sync; rm /tmp/install.sh
 #########################################
 ##         EXPORTS AND VOLUMES         ##
 #########################################
-VOLUME /config /music /etc/avahi
+VOLUME /config /music
 EXPOSE 3483 3483/udp 9000 9090 5353/udp
 
 
