@@ -11,8 +11,6 @@ ENV HOME="/root" LC_ALL="C.UTF-8" LANG="en_US.UTF-8" LANGUAGE="en_US.UTF-8"
 # Use baseimage-docker's init system
 CMD ["/sbin/my_init"]
 
-RUN apt-get remove -y avahi-daemon
-RUN apt-get purge -y avahi-daemon
 RUN rm -rvf /etc/avahi/
 
 #########################################
