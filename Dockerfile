@@ -11,7 +11,13 @@ ENV HOME="/root" LC_ALL="C.UTF-8" LANG="en_US.UTF-8" LANGUAGE="en_US.UTF-8"
 # Use baseimage-docker's init system
 CMD ["/sbin/my_init"]
 
-RUN rm -rvf /etc/avahi/
+# Install airplay
+apt-get update
+apt-get install -y wget libcrypt-openssl-rsa-perl libio-socket-inet6-perl libwww-perl avahi-utils libio-socket-ssl-perl
+wget http://www.inf.udec.cl/~diegocaro/rpi/libnet-sdp-perl_0.07-1_all.deb
+dpkg -i libnet-sdp-perl_0.07-1_all.deb
+
+ADD avahi-daemon.conf /etc/avahi/avahi-daemon.conf
 
 #########################################
 ##         RUN INSTALL SCRIPT          ##
