@@ -12,7 +12,7 @@ ENV HOME="/root" LC_ALL="C.UTF-8" LANG="en_US.UTF-8" LANGUAGE="en_US.UTF-8"
 CMD ["/sbin/my_init"]
 
 RUN apt-get update
-RUN apt-get install wget libcrypt-openssl-rsa-perl libio-socket-inet6-perl libwww-perl avahi-utils libio-socket-ssl-perl
+RUN apt-get install -y wget libcrypt-openssl-rsa-perl libio-socket-inet6-perl libwww-perl avahi-utils libio-socket-ssl-perl
 RUN wget http://www.inf.udec.cl/~diegocaro/rpi/libnet-sdp-perl_0.07-1_all.deb
 RUN dpkg -i libnet-sdp-perl_0.07-1_all.deb
 
