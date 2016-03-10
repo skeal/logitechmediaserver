@@ -11,6 +11,11 @@ ENV HOME="/root" LC_ALL="C.UTF-8" LANG="en_US.UTF-8" LANGUAGE="en_US.UTF-8"
 # Use baseimage-docker's init system
 CMD ["/sbin/my_init"]
 
+RUN apt-get update
+RUN apt-get install wget libcrypt-openssl-rsa-perl libio-socket-inet6-perl libwww-perl avahi-utils libio-socket-ssl-perl
+RUN wget http://www.inf.udec.cl/~diegocaro/rpi/libnet-sdp-perl_0.07-1_all.deb
+RUN dpkg -i libnet-sdp-perl_0.07-1_all.deb
+
 #########################################
 ##         RUN INSTALL SCRIPT          ##
 #########################################
@@ -23,3 +28,7 @@ RUN chmod +x /tmp/install.sh; sync; /tmp/install.sh; sync; rm /tmp/install.sh
 #########################################
 VOLUME /config /music
 EXPOSE 3483 3483/udp 9000 9090
+
+78.31.8.0/22
+193.182.8.0/21
+193.235.232.0/24
