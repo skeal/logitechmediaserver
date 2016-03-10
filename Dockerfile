@@ -28,7 +28,3 @@ RUN chmod +x /tmp/install.sh; sync; /tmp/install.sh; sync; rm /tmp/install.sh
 #########################################
 VOLUME /config /music
 EXPOSE 3483 3483/udp 9000 9090
-
-78.31.8.0/22
-193.182.8.0/21
-193.235.232.0/24
