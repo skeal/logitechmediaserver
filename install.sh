@@ -60,7 +60,7 @@ dpkg -i /tmp/lms.deb
 rm /tmp/lms.deb
 
 # Install airplay
-apt-get remove -y avahi-daemon 
+ 
 apt-get update
 apt-get install -y avahi-daemon wget libcrypt-openssl-rsa-perl libio-socket-inet6-perl libwww-perl avahi-utils libio-socket-ssl-perl
 wget http://www.inf.udec.cl/~diegocaro/rpi/libnet-sdp-perl_0.07-1_all.deb
