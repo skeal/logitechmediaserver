@@ -2,6 +2,8 @@
 
 Docker image for Logitech Media Server (SqueezeCenter, SqueezeboxServer, SlimServer)
 
+Also with airplay function!
+
 Run with:
 
 ```
