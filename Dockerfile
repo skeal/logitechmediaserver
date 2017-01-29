@@ -28,6 +28,9 @@ RUN mkdir /etc/service/avahi-daemon
 ADD avahi-daemon.sh /etc/service/avahi-daemon/run
 RUN chmod +x /etc/service/avahi-daemon/run
 
+# Fix spamming in logs
+RUN echo "export NO_AT_BRIDGE=1" >> /etc/bash.bashrc
+
 
 #########################################
 ##         RUN INSTALL SCRIPT          ##
