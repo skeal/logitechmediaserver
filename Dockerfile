@@ -21,7 +21,7 @@ RUN dpkg -i libnet-sdp-perl_0.07-1_all.deb
 ADD avahi-daemon.conf /etc/avahi/avahi-daemon.conf
 
 # Fix avahi-daemon not working without dbus
-RUN sed -i -e "s#\#enable-dbus=yes#enable-dbus=false#g" /etc/avahi/avahi-daemon.conf
+# RUN sed -i -e "s#\#enable-dbus=yes#enable-dbus=false#g" /etc/avahi/avahi-daemon.conf
 
 # Add avahi-daemon to runit
 RUN mkdir /etc/service/avahi-daemon
