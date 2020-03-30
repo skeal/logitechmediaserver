@@ -15,4 +15,4 @@ docker run -t -i --rm=true --net="host" \
       snoopy86/logitechmediaserver
 ```
 
-DONATE - https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GSRTR79H7Q47J
+DONATE - https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=FDMP56NCG5A26&source=url
