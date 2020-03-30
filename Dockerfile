@@ -14,7 +14,7 @@ CMD ["/sbin/my_init"]
 # Install airplay
 RUN mkdir /var/run/dbus
 RUN apt-get update
-RUN apt-get install -y wget lame faad flac sox perl tzdata pv libcrypt-openssl-rsa-perl libio-socket-inet6-perl libwww-perl avahi-utils libio-socket-ssl-perl dbus avahi-daemon
+RUN apt-get install -y wget lame faad flac sox perl tzdata pv libcrypt-openssl-rsa-perl libio-socket-inet6-perl libwww-perl avahi-utils libio-socket-ssl-perl dbus avahi-daemon mpg123
 #RUN wget http://www.inf.udec.cl/~diegocaro/rpi/libnet-sdp-perl_0.07-1_all.deb
 #RUN wget http://www.forum-raspberrypi.de/mydownloads/downloads/libnet-sdp-perl_0.07-1_all.deb
 ADD libnet-sdp-perl_0.07-1_all.deb /tmp
