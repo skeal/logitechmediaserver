@@ -41,6 +41,9 @@ EOT
 
 chmod -R +x /etc/service/ /etc/my_init.d/
 
+# Allow acces to /dev/snd
+usermod -a -G audio nobody
+
 #########################################
 ##             INSTALLATION            ##
 #########################################
