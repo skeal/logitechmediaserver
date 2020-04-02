@@ -49,7 +49,7 @@ usermod -a -G audio nobody
 #########################################
 
 # Install LMS
-OUT=$(curl -skL "http://downloads.slimdevices.com/nightly/index.php?ver=7.9")
+OUT=$(curl -skL "http://downloads.slimdevices.com/nightly/index.php?ver=8.0")
 # Try to catch the link or die
 REGEX=".*href=\".(.*)amd64.deb\""
 if [[ ${OUT} =~ ${REGEX} ]]; then
