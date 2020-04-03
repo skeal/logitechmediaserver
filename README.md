@@ -16,6 +16,8 @@ docker run -t -i --rm=true --net="bridge" \
       -p 9090:9090/tcp \
       -p 3483:3483/tcp \
       -p 3483:3483/udp \
+      -p 5353:5353/tcp \
+      -p 5353:5353/udp \
       snoopy86/logitechmediaserver
 ```
 
@@ -36,6 +38,8 @@ services:
       - 9090:9090/tcp
       - 3483:3483/tcp
       - 3483:3483/udp
+      - 5353:5353/tcp
+      - 5353:5353/udp
     restart: always
 ```
 DONATE - https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=FDMP56NCG5A26&source=url
