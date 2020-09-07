@@ -18,7 +18,7 @@ docker run -t -i --rm=true --net="bridge" \
       -p 3483:3483/udp \
       -p 5353:5353/tcp \
       -p 5353:5353/udp \
-      snoopy86/logitechmediaserver
+      skeal/logitechmediaserver
 ```
 
 or compose
@@ -27,7 +27,7 @@ version: '3'
 services:
   lms:
     container_name: lms
-    image: snoopy86/logitechmediaserver
+    image: skeal/logitechmediaserver
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /<somewhere>:/config:rw
